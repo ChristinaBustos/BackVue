@@ -1,8 +1,10 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import employeeRouter from './modules/employee/adapters/employees.controller';
+import cors from 'cors'
 const app: Application = express()
 
 // middlewares
+// app.use(cors())
 app.use(express.json())
 app.use((_req: Request, res: Response, next: NextFunction) =>  {
     res.header('Access-Control-Allow-Origin', '*');
